@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Makeup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat'],
+                    },
+                    colors: {
+                        red: {
+                            '50': '#ffebee',
+                            '100': '#ffcdd2',
+                            '200': '#ef9a9a',
+                            '300': '#e57373',
+                            '400': '#ef5350',
+                            '500': '#f44336',
+                            '600': '#e53935',
+                            '700': '#d32f2f',
+                            '800': '#c62828',
+                            '900': '#b71c1c',
+                            'accent-100': '#ff8a80',
+                            'accent-200': '#ff5252',
+                            'accent-400': '#ff1744',
+                            'accent-700': '#d50000',
+                        },
+                        purple: {
+                            50: '#f3e5f5',
+                            100: '#e1bee7',
+                            200: '#ce93d8',
+                            300: '#ba68c8',
+                            400: '#ab47bc',
+                            500: '#9c27b0',
+                            600: '#8e24aa',
+                            700: '#7b1fa2',
+                            800: '#6a1b9a',
+                            900: '#4a148c',
+                            'accent-100': '#ea80fc',
+                            'accent-200': '#e040fb',
+                            'accent-400': '#d500f9',
+                            'accent-700': '#aa00ff',
+                        },
+                        'deep-purple': {
+                            50: '#ede7f6',
+                            100: '#d1c4e9',
+                            200: '#b39ddb',
+                            300: '#9575cd',
+                            400: '#7e57c2',
+                            500: '#673ab7',
+                            600: '#5e35b1',
+                            700: '#512da8',
+                            800: '#4527a0',
+                            900: '#311b92',
+                            'accent-100': '#b388ff',
+                            'accent-200': '#7c4dff',
+                            'accent-400': '#651fff',
+                            'accent-700': '#6200ea',
+                        },
+                        teal: {
+                            50: '#e0f2f1',
+                            100: '#b2dfdb',
+                            200: '#80cbc4',
+                            300: '#4db6ac',
+                            400: '#26a69a',
+                            500: '#009688',
+                            600: '#00897b',
+                            700: '#00796b',
+                            800: '#00695c',
+                            900: '#004d40',
+                            'accent-100': '#a7ffeb',
+                            'accent-200': '#64ffda',
+                            'accent-400': '#1de9b6',
+                            'accent-700': '#00bfa5',
+                        },
+                        indigo: {
+                            50: '#e8eaf6',
+                            100: '#c5cae9',
+                            200: '#9fa8da',
+                            300: '#7986cb',
+                            400: '#5c6bc0',
+                            500: '#3f51b5',
+                            600: '#3949ab',
+                            700: '#303f9f',
+                            800: '#283593',
+                            900: '#1a237e',
+                            'accent-100': '#8c9eff',
+                            'accent-200': '#536dfe',
+                            'accent-400': '#3d5afe',
+                            'accent-700': '#304ffe',
+                        },
+                        pink: {
+                            50: '#fce4ec',
+                            100: '#f8bbd0',
+                            200: '#f48fb1',
+                            300: '#f06292',
+                            400: '#ec407a',
+                            500: '#e91e63',
+                            600: '#d81b60',
+                            700: '#c2185b',
+                            800: '#ad1457',
+                            900: '#880e4f',
+                            'accent-100': '#ff80ab',
+                            'accent-200': '#ff4081',
+                            'accent-400': '#f50057',
+                            'accent-700': '#c51162',
+                        },
+                        blue: {
+                            50: '#e3f2fd',
+                            100: '#bbdefb',
+                            200: '#90caf9',
+                            300: '#64b5f6',
+                            400: '#42a5f5',
+                            500: '#2196f3',
+                            600: '#1e88e5',
+                            700: '#1976d2',
+                            800: '#1565c0',
+                            900: '#0d47a1',
+                            'accent-100': '#82b1ff',
+                            'accent-200': '#448aff',
+                            'accent-400': '#2979ff',
+                            'accent-700': '#2962ff',
+                        },
+                        'light-blue': {
+                            50: '#e1f5fe',
+                            100: '#b3e5fc',
+                            200: '#81d4fa',
+                            300: '#4fc3f7',
+                            400: '#29b6f6',
+                            500: '#03a9f4',
+                            600: '#039be5',
+                            700: '#0288d1',
+                            800: '#0277bd',
+                            900: '#01579b',
+                            'accent-100': '#80d8ff',
+                            'accent-200': '#40c4ff',
+                            'accent-400': '#00b0ff',
+                            'accent-700': '#0091ea',
+                        },
+                        cyan: {
+                            50: '#e0f7fa',
+                            100: '#b2ebf2',
+                            200: '#80deea',
+                            300: '#4dd0e1',
+                            400: '#26c6da',
+                            500: '#00bcd4',
+                            600: '#00acc1',
+                            700: '#0097a7',
+                            800: '#00838f',
+                            900: '#006064',
+                            'accent-100': '#84ffff',
+                            'accent-200': '#18ffff',
+                            'accent-400': '#00e5ff',
+                            'accent-700': '#00b8d4',
+                        },
+                        gray: {
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            200: '#eeeeee',
+                            300: '#e0e0e0',
+                            400: '#bdbdbd',
+                            500: '#9e9e9e',
+                            600: '#757575',
+                            700: '#616161',
+                            800: '#424242',
+                            900: '#212121',
+                        },
+                        'blue-gray': {
+                            50: '#eceff1',
+                            100: '#cfd8dc',
+                            200: '#b0bec5',
+                            300: '#90a4ae',
+                            400: '#78909c',
+                            500: '#607d8b',
+                            600: '#546e7a',
+                            700: '#455a64',
+                            800: '#37474f',
+                            900: '#263238',
+                        },
+                        green: {
+                            50: '#e8f5e9',
+                            100: '#c8e6c9',
+                            200: '#a5d6a7',
+                            300: '#81c784',
+                            400: '#66bb6a',
+                            500: '#4caf50',
+                            600: '#43a047',
+                            700: '#388e3c',
+                            800: '#2e7d32',
+                            900: '#1b5e20',
+                            'accent-100': '#b9f6ca',
+                            'accent-200': '#69f0ae',
+                            'accent-400': '#00e676',
+                            'accent-700': '#00c853',
+                        },
+                        'light-green': {
+                            50: '#f1f8e9',
+                            100: '#dcedc8',
+                            200: '#c5e1a5',
+                            300: '#aed581',
+                            400: '#9ccc65',
+                            500: '#8bc34a',
+                            600: '#7cb342',
+                            700: '#689f38',
+                            800: '#558b2f',
+                            900: '#33691e',
+                            'accent-100': '#ccff90',
+                            'accent-200': '#b2ff59',
+                            'accent-400': '#76ff03',
+                            'accent-700': '#64dd17',
+                        },
+                        lime: {
+                            50: '#f9fbe7',
+                            100: '#f0f4c3',
+                            200: '#e6ee9c',
+                            300: '#dce775',
+                            400: '#d4e157',
+                            500: '#cddc39',
+                            600: '#c0ca33',
+                            700: '#afb42b',
+                            800: '#9e9d24',
+                            900: '#827717',
+                            'accent-100': '#f4ff81',
+                            'accent-200': '#eeff41',
+                            'accent-400': '#c6ff00',
+                            'accent-700': '#aeea00',
+                        },
+                        amber: {
+                            50: '#fff8e1',
+                            100: '#ffecb3',
+                            200: '#ffe082',
+                            300: '#ffd54f',
+                            400: '#ffca28',
+                            500: '#ffc107',
+                            600: '#ffb300',
+                            700: '#ffa000',
+                            800: '#ff8f00',
+                            900: '#ff6f00',
+                            'accent-100': '#ffe57f',
+                            'accent-200': '#ffd740',
+                            'accent-400': '#ffc400',
+                            'accent-700': '#ffab00',
+                        },
+                        yellow: {
+                            50: '#fffde7',
+                            100: '#fff9c4',
+                            200: '#fff59d',
+                            300: '#fff176',
+                            400: '#ffee58',
+                            500: '#ffeb3b',
+                            600: '#fdd835',
+                            700: '#fbc02d',
+                            800: '#f9a825',
+                            900: '#f57f17',
+                            'accent-100': '#ffff8d',
+                            'accent-200': '#ffff00',
+                            'accent-400': '#ffea00',
+                            'accent-700': '#ffd600',
+                        },
+                        orange: {
+                            50: '#fff3e0',
+                            100: '#ffe0b2',
+                            200: '#ffcc80',
+                            300: '#ffb74d',
+                            400: '#ffa726',
+                            500: '#ff9800',
+                            600: '#fb8c00',
+                            700: '#f57c00',
+                            800: '#ef6c00',
+                            900: '#e65100',
+                            'accent-100': '#ffd180',
+                            'accent-200': '#ffab40',
+                            'accent-400': '#ff9100',
+                            'accent-700': '#ff6d00',
+                        },
+                        'deep-orange': {
+                            50: '#fbe9e7',
+                            100: '#ffccbc',
+                            200: '#ffab91',
+                            300: '#ff8a65',
+                            400: '#ff7043',
+                            500: '#ff5722',
+                            600: '#f4511e',
+                            700: '#e64a19',
+                            800: '#d84315',
+                            900: '#bf360c',
+                            'accent-100': '#ff9e80',
+                            'accent-200': '#ff6e40',
+                            'accent-400': '#ff3d00',
+                            'accent-700': '#dd2c00',
+                        },
+                        brown: {
+                            50: '#efebe9',
+                            100: '#d7ccc8',
+                            200: '#bcaaa4',
+                            300: '#a1887f',
+                            400: '#8d6e63',
+                            500: '#795548',
+                            600: '#6d4c41',
+                            700: '#5d4037',
+                            800: '#4e342e',
+                            900: '#3e2723',
+                        },
+                    },
+                    spacing: {
+                        '7': '1.75rem',
+                        '9': '2.25rem',
+                        '28': '7rem',
+                        '80': '20rem',
+                        '96': '24rem',
+                    },
+                    height: {
+                        '1/2': '50%',
+                    },
+                    scale: {
+                        '30': '.3',
+                    },
+                    boxShadow: {
+                        outline: '0 0 0 3px rgba(101, 31, 255, 0.4)',
+                    },
+                },
+            },
+            variants: {
+                scale: ['responsive', 'hover', 'focus', 'group-hover'],
+                textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+                opacity: ['responsive', 'hover', 'focus', 'group-hover'],
+                backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
+            },
+            plugins: [],
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="bg-fuchsia-700">
+            <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+                <div class="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
+                    <ul class="flex items-center hidden space-x-8 lg:flex">
+                        <li><a href="/" aria-label="Our product" title="Our product"
+                                class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Contenido</a>
+                        </li>
+                        <li><a href="/" aria-label="Our product" title="Our product"
+                                class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Brochas</a>
+                        </li>
+                        <li><a href="/" aria-label="Product pricing" title="Product pricing"
+                                class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Rubores</a>
+                        </li>
+                    </ul>
+                    <a href="/" aria-label="CUrso HTML" title="Curso HTML" class="inline-flex items-center lg:mx-auto">
+                        <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            fill="#000000">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M242 280.3c-12.9 0-19.2-10.1-23.8-17.4-4.3-6.9-6.5-9.9-10.2-9.9s-5.9 3-10.2 9.9c-4.6 7.3-10.9 17.4-23.8 17.4s-19.2-10.1-23.8-17.4c-4.3-6.9-6.5-9.9-10.2-9.9s-5.9 3-10.2 9.9c-4.6 7.3-10.9 17.4-23.8 17.4s-19.2-10.1-23.8-17.4C77.9 256 75.7 253 72 253c-4.4 0-8-3.6-8-8s3.6-8 8-8c12.9 0 19.2 10.1 23.8 17.4 4.3 6.9 6.5 9.9 10.2 9.9s5.9-3 10.2-9.9C120.7 247 127 237 140 237s19.2 10.1 23.8 17.4c4.3 6.9 6.5 9.9 10.2 9.9 3.7 0 5.9-3 10.2-9.9C188.8 247 195 237 208 237s19.2 10.1 23.8 17.4c4.3 6.9 6.5 9.9 10.2 9.9 4.4 0 8 3.6 8 8s-3.6 8-8 8zM263.9 230.3c-13.8 0-20.7-9.8-25.7-17-5.1-7.3-7.7-10.2-12.7-10.2s-7.5 3-12.7 10.2c-5.1 7.2-12 17-25.7 17-13.8 0-20.7-9.8-25.7-17-5.1-7.3-7.7-10.2-12.7-10.2s-7.5 3-12.7 10.2c-5.1 7.2-12 17-25.7 17s-20.7-9.8-25.7-17c-5.1-7.3-7.7-10.2-12.7-10.2-4.4 0-8-3.6-8-8s3.6-8 8-8c13.8 0 20.7 9.8 25.7 17 5.1 7.3 7.7 10.2 12.7 10.2s7.5-3 12.7-10.2c5.1-7.2 12-17 25.7-17s20.7 9.8 25.7 17c5.1 7.3 7.7 10.2 12.7 10.2 5 0 7.5-3 12.7-10.2 5.1-7.2 12-17 25.7-17s20.7 9.8 25.7 17c5.1 7.3 7.7 10.2 12.7 10.2 4.4 0 8 3.6 8 8s-3.6 8-8 8z"
+                                    fill="#9A2D2F"></path>
+                                <path d="M352 104.7m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill="#FFEB4D"></path>
+                                <path
+                                    d="M352 144.7c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40z m0-64c-13.2 0-24 10.8-24 24s10.8 24 24 24 24-10.8 24-24-10.8-24-24-24z"
+                                    fill="#9A2D2F"></path>
+                                <path d="M368.9 234.7h320v204h-320z" fill="#C2F2FF"></path>
+                                <path d="M547.4 287.2L410.2 438.7h246.1z" fill="#FFACC2"></path>
+                                <path d="M623.9 484.7h-255l150.4-166z" fill="#DAE5FF"></path>
+                                <path d="M590.1 347.1l-40.2-9.9-52 5.2 49.5-54.6z" fill="#FFFFFF"></path>
+                                <path d="M477.8 364.5l22.8 16.7 18.6-14 41.3 16.9-41.2-65.3z" fill="#FFFFFF"></path>
+                                <path
+                                    d="M439.9 311.7c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.7 24-24 24z m0-32c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8z"
+                                    fill="#9A2D2F"></path>
+                                <path d="M439.9 287.7m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#FFEB4D"></path>
+                                <path
+                                    d="M800.9 950.7h-576c-17.6 0-32-14.4-32-32v-448c0-17.6 14.4-32 32-32h576c17.6 0 32 14.4 32 32v448c0 17.6-14.4 32-32 32z"
+                                    fill="#FFACC2"></path>
+                                <path d="M800.9 950.7h-576c-17.6 0-32-14.4-32-32v-96h640v96c0 17.6-14.4 32-32 32z"
+                                    fill="#FFEB4D"></path>
+                                <path d="M512.9 695.7m-193 0a193 193 0 1 0 386 0 193 193 0 1 0-386 0Z" fill="#DAE5FF">
+                                </path>
+                                <path d="M512.9 695.7m-144 0a144 144 0 1 0 288 0 144 144 0 1 0-288 0Z" fill="#FFFFFF">
+                                </path>
+                                <path
+                                    d="M311.9 539.7h-58c-8.8 0-16-7.2-16-16s7.2-16 16-16h58c8.8 0 16 7.2 16 16s-7.2 16-16 16z"
+                                    fill="#FFFFFF"></path>
+                                <path d="M516.3 695.5m-48 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0Z" fill="#FFC0F0"></path>
+                                <path
+                                    d="M512.9 847.7c83.8 0 152-68.2 152-152s-68.2-152-152-152-152 68.2-152 152 68.2 152 152 152z m0-288c75 0 136 61 136 136s-61 136-136 136-136-61-136-136 61-136 136-136zM311.9 499.7h-58c-13.2 0-24 10.8-24 24s10.8 24 24 24h58c13.2 0 24-10.8 24-24 0-13.3-10.7-24-24-24z m0 32h-58c-4.4 0-8-3.6-8-8s3.6-8 8-8h58c4.4 0 8 3.6 8 8s-3.6 8-8 8z"
+                                    fill="#9A2D2F"></path>
+                                <path
+                                    d="M516.3 751.5c30.9 0 56-25.1 56-56s-25.1-56-56-56-56 25.1-56 56 25.1 56 56 56z m0-96c22.1 0 40 17.9 40 40s-17.9 40-40 40-40-17.9-40-40 17.9-40 40-40z"
+                                    fill="#9A2D2F"></path>
+                                <path
+                                    d="M951 686.3c-5 0-7.5-3-12.7-10.2-5.1-7.2-12-17-25.7-17s-20.7 9.8-25.7 17c-5.1 7.3-7.7 10.2-12.7 10.2-5 0-7.5-3-12.7-10.2-4.4-6.2-10.2-14.5-20.6-16.5v-33c2.3 1.6 4.5 4.4 7.5 8.7 5.1 7.2 12 17 25.7 17s20.7-9.8 25.7-17c5.1-7.3 7.7-10.2 12.7-10.2s7.5 3 12.7 10.2c5.1 7.2 12 17 25.7 17 4.4 0 8-3.6 8-8s-3.6-8-8-8c-5 0-7.5-3-12.7-10.2-5.1-7.2-12-17-25.7-17s-20.7 9.8-25.7 17c-5.1 7.3-7.7 10.2-12.7 10.2-5 0-7.5-3-12.7-10.2-4.4-6.2-10.2-14.5-20.6-16.5V470.7c0-22.1-17.9-40-40-40h-104v-196c0-4.4-3.6-8-8-8h-320c-4.4 0-8 3.6-8 8v196h-136c-22.1 0-40 17.9-40 40v448c0 9 3 17.3 8 24h-91.6c-4.4 0-8 3.6-8 8s3.6 8 8 8h824c4.4 0 8-3.6 8-8s-3.6-8-8-8h-92.4c5-6.7 8-15 8-24V676.5c2.3 1.6 4.5 4.4 7.5 8.7 5.1 7.2 12 17 25.7 17s20.7-9.8 25.7-17c5.1-7.3 7.7-10.2 12.7-10.2s7.5 3 12.7 10.2c5.1 7.2 12 17 25.7 17 4.4 0 8-3.6 8-8s-3.4-7.9-7.8-7.9zM376.9 242.7h304v188h-20.6L553.9 282.5c-1.4-2-3.6-3.2-6-3.3-2.4-0.1-4.8 0.8-6.4 2.6L406.6 430.7h-29.7v-188z m162.4 122.7l1.2 1.8-18.2-7.4c-2.6-1.1-5.6-0.7-7.8 1l-13.8 10.4-10.8-7.9 12-13.3 16.4-18.1 9.8 15.5 11.2 18z m-10-45.8l17.4-19.2 24.2 33.6-19.1-4.7c-0.6-0.2-1.3-0.2-1.9-0.2h-0.8l-12.9 1.3-6.9-10.8z m-33.4 68c2.8 2.1 6.7 2.1 9.5-0.1l14.9-11.3 34.7 14.2 25.3 40.2H428.6l50.2-55.5 17.1 12.5z m71.5-7.6c0-0.1-0.1-0.2-0.1-0.2l-14.7-23.2-6.9-11 3.6-0.4 36.4 9 54.9 76.4h-41.3L567.4 380z m257.5 538.7c0 13.2-10.7 24-24 24h-576c-13.2 0-24-10.8-24-24v-88h163.2c36.8 40.5 89.9 66 148.8 66s112-25.5 148.8-66h163.2v88z m-497-223c0-102 83-185 185-185s185 83 185 185-83 185-185 185-185-83-185-185z m497 119H674.8c24.6-33.3 39.1-74.5 39.1-119 0-110.8-90.2-201-201-201s-201 90.2-201 201c0 44.5 14.5 85.7 39.1 119H200.9v-344c0-13.2 10.8-24 24-24h576c13.2 0 24 10.8 24 24v344z"
+                                    fill="#9A2D2F"></path>
+                                <path
+                                    d="M200.9 565.1c5.8-1.4 10.9-3.1 15-5.4 11.2-6.3 16.7-13.3 19.8-20.4-3.6-4.2-5.8-9.7-5.8-15.6 0-12.1 9.1-22.2 20.8-23.8 8.4-7.9 24.1-14.3 55.2-18 58.1-6.9 69.4-24.8 70.8-35.3H224.9c-13.2 0-24 10.8-24 24v94.5z"
+                                    fill="#FFFFFF"></path>
+                            </g>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">Tienda De
+                            Maquillaje</span>
+                    </a>
+                    <ul class="flex items-center hidden ml-auto space-x-8 lg:flex">
+                        <li><a href="/" aria-label="Sign in" title="Sign in"
+                                class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Acceso
+                            </a></li>
+                        <li>
+                            <a href="/"
+                                class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                aria-label="Sign up" title="Sign up">
+                                Registro
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Mobile menu -->
+                    <div class="ml-auto lg:hidden">
+                        <button aria-label="Open Menu" title="Open Menu"
+                            class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline">
+                            <svg class="w-5 text-gray-600" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"> </path>
+                                <path fill="currentColor"
+                                    d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"></path>
+                                <path fill="currentColor"
+                                    d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"> </path>
+                            </svg>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <p> 
+                <h2>Siguenos en instagram @DulceMakeup</h2>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+            <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="sm:col-span-2">
+                    <a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">
+                        <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            fill="#000000">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M264.1 239.7c-13.8 0-20.7-9.8-25.7-17-5.1-7.3-7.7-10.2-12.7-10.2s-7.5 3-12.7 10.2c-5.1 7.2-12 17-25.7 17s-20.7-9.8-25.7-17c-5.1-7.3-7.7-10.2-12.7-10.2-5 0-7.5 3-12.7 10.2-5.1 7.2-12 17-25.7 17-13.8 0-20.7-9.8-25.7-17-5.1-7.3-7.7-10.2-12.7-10.2-4.4 0-8-3.6-8-8s3.6-8 8-8c13.8 0 20.7 9.8 25.7 17 5.1 7.3 7.7 10.2 12.7 10.2 5 0 7.5-3 12.7-10.2 5.1-7.2 12-17 25.7-17 13.8 0 20.7 9.8 25.7 17 5.1 7.3 7.7 10.2 12.7 10.2 5 0 7.5-3 12.7-10.2 5.1-7.2 12-17 25.7-17 13.8 0 20.7 9.8 25.7 17 5.1 7.3 7.7 10.2 12.7 10.2 4.4 0 8 3.6 8 8s-3.6 8-8 8zM264.1 289.7c-13.8 0-20.7-9.8-25.7-17-5.1-7.3-7.7-10.2-12.7-10.2s-7.5 3-12.7 10.2c-5.1 7.2-12 17-25.7 17s-20.7-9.8-25.7-17c-5.1-7.3-7.7-10.2-12.7-10.2-5 0-7.5 3-12.7 10.2-5.1 7.2-12 17-25.7 17-13.8 0-20.7-9.8-25.7-17-5.1-7.3-7.7-10.2-12.7-10.2-4.4 0-8-3.6-8-8s3.6-8 8-8c13.8 0 20.7 9.8 25.7 17 5.1 7.3 7.7 10.2 12.7 10.2 5 0 7.5-3 12.7-10.2 5.1-7.2 12-17 25.7-17 13.8 0 20.7 9.8 25.7 17 5.1 7.3 7.7 10.2 12.7 10.2 5 0 7.5-3 12.7-10.2 5.1-7.2 12-17 25.7-17 13.8 0 20.7 9.8 25.7 17 5.1 7.3 7.7 10.2 12.7 10.2 4.4 0 8 3.6 8 8s-3.6 8-8 8z"
+                                    fill="#9A2D2F"></path>
+                                <path d="M349.1 104.1m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill="#FFEB4D"></path>
+                                <path
+                                    d="M349.1 144.1c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-18 40-40 40z m0-64c-13.2 0-24 10.8-24 24s10.8 24 24 24 24-10.8 24-24-10.8-24-24-24z"
+                                    fill="#9A2D2F"></path>
+                                <path d="M798.7 501.1h-598c-17.7 0-32-14.3-32-32s14.3-32 32-32h598v64z" fill="#FFE0B6">
+                                </path>
+                                <path d="M718.7 471.1h-470v-148c0-8.8 7.2-16 16-16h438c8.8 0 16 7.2 16 16v148z"
+                                    fill="#FFEB4D"></path>
+                                <path d="M248.7 405.1h470v32h-470z" fill="#FFFFFF"></path>
+                                <path
+                                    d="M848.7 501.1h-648c-17.7 0-32-14.3-32-32v388c0 35.3 28.7 64 64 64h552c35.3 0 64-28.7 64-64v-356z"
+                                    fill="#FFACC2"></path>
+                                <path
+                                    d="M421.4 634.5l-15.1 14.7c-6.9-7.1-13.7-10.6-20.4-10.6-4 0-7.2 1.1-9.6 3.2-2.5 2.1-3.7 4.5-3.7 7.3 0 2.3 1.1 4.7 3.3 7 2.1 2.3 6.5 4.8 13 7.5 11.6 4.8 19.5 8.9 23.8 12.3 4.3 3.4 7.6 7.4 9.8 12.2 2.3 4.7 3.4 10.1 3.4 15.9 0 5.9-1.2 11.3-3.7 16.3-2.4 5-5.6 9-9.5 11.9-3.9 2.9-9.4 5.1-16.6 6.6v20.9h-14.7v-20.4c-6.8-0.8-12.6-2.5-17.4-5.2-6.6-3.6-12.7-8.5-18.3-14.5l14.8-15.2c9.5 10.2 18.8 15.2 27.7 15.2 4.5 0 8.4-1.6 11.7-4.7 3.3-3.2 4.9-6.9 4.9-11.1 0-3.6-1-6.7-3.1-9.5-2.1-2.7-6.2-5.5-12.3-8.3-12.4-5.7-20.8-10.3-25.2-13.6s-7.6-7.1-9.8-11.3c-2.2-4.2-3.2-8.7-3.2-13.4 0-7.9 2.9-14.6 8.6-20.2 5.7-5.6 13-8.6 21.7-9v-7.8H396v8.8c5.1 1.2 9.3 2.8 12.9 4.8s7.7 5.4 12.5 10.2z"
+                                    fill="#9A2D2F"></path>
+                                <path d="M848.7 756.1h-154c-35.3 0-64-28.7-64-64s28.7-64 64-64h154v128z" fill="#DAE5FF">
+                                </path>
+                                <path d="M693.7 724.1c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z"
+                                    fill="#FFFFFF"></path>
+                                <path
+                                    d="M693.7 732.1c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-18 40-40 40z m0-64c-13.2 0-24 10.8-24 24s10.8 24 24 24 24-10.8 24-24-10.8-24-24-24z"
+                                    fill="#9A2D2F"></path>
+                                <path
+                                    d="M951.4 734.9c-5 0-7.5-3-12.7-10.2-5.1-7.2-12-17-25.7-17s-20.7 9.8-25.7 17c-5.1 7.3-7.7 10.2-12.7 10.2-5 0-7.5-3-12.7-10.2-1.5-2.2-3.2-4.6-5.2-6.9v-24.3c4.3 4.1 10 7.4 17.9 7.4 13.8 0 20.7-9.8 25.7-17 5.1-7.3 7.7-10.2 12.7-10.2s7.5 3 12.7 10.2c5.1 7.2 12 17 25.7 17 4.4 0 8-3.6 8-8s-3.6-8-8-8c-5 0-7.5-3-12.7-10.2-5.1-7.2-12-17-25.7-17s-20.7 9.8-25.7 17c-5.1 7.3-7.7 10.2-12.7 10.2-5 0-7.5-3-12.7-10.2-1.5-2.2-3.2-4.6-5.2-6.9V501.1c0-4.4-3.6-8-8-8h-42v-56c0-4.4-3.6-8-8-8h-72v-106c0-13.2-10.8-24-24-24h-438c-13.2 0-24 10.8-24 24v106h-40c-22.1 0-40 17.9-40 40v388c0 22.6 10.5 42.8 26.8 56H99.7c-4.4 0-8 3.6-8 8s3.6 8 8 8h824c4.4 0 8-3.6 8-8s-3.6-8-8-8h-93.8c16.3-13.2 26.8-33.4 26.8-56V743.5c4.3 4.1 10 7.4 17.9 7.4 13.8 0 20.7-9.8 25.7-17 5.1-7.3 7.7-10.2 12.7-10.2s7.5 3 12.7 10.2c5.1 7.2 12 17 25.7 17 4.4 0 8-3.6 8-8s-3.6-8-8-8z m-110.7 13.2h-146c-30.9 0-56-25.1-56-56s25.1-56 56-56h146v112z m-584-425c0-4.4 3.6-8 8-8h438c4.4 0 8 3.6 8 8v74h-454v-74z m0 90h454v16h-454v-16z m0 32h454v18h-454v-18z m-56 0h40v26c0 4.4 3.6 8 8 8h470c4.4 0 8-3.6 8-8v-26h64v48h-590c-13.2 0-24-10.8-24-24s10.7-24 24-24z m584.1 468H232.5c-30.8-0.1-55.9-25.2-55.9-56V501h0.1c0.1 0 0.1 0.1 0.2 0.1 0.4 0.3 0.8 0.6 1.3 0.9 0.2 0.1 0.3 0.2 0.5 0.3 0.3 0.2 0.7 0.5 1 0.7 0.2 0.1 0.4 0.2 0.5 0.3 0.4 0.2 0.7 0.4 1.1 0.6 0.2 0.1 0.3 0.2 0.5 0.3 0.5 0.3 1 0.5 1.4 0.7 0.1 0 0.1 0.1 0.2 0.1 0.5 0.3 1.1 0.5 1.6 0.7 0.2 0.1 0.3 0.1 0.5 0.2 0.4 0.2 0.8 0.3 1.2 0.5 0.2 0.1 0.4 0.1 0.6 0.2 0.4 0.1 0.8 0.3 1.1 0.4 0.2 0.1 0.4 0.1 0.6 0.2 0.4 0.1 0.9 0.3 1.3 0.4 0.2 0 0.3 0.1 0.5 0.1 0.6 0.1 1.2 0.3 1.8 0.4 0.1 0 0.3 0 0.4 0.1 0.5 0.1 0.9 0.2 1.4 0.3 0.2 0 0.4 0.1 0.6 0.1 0.4 0.1 0.8 0.1 1.2 0.2 0.2 0 0.4 0 0.7 0.1 0.4 0 0.9 0.1 1.3 0.1h642.5v111h-146c-39.7 0-72 32.3-72 72s32.3 72 72 72h146v93c0 30.9-25.1 56-55.9 56.1z"
+                                    fill="#9A2D2F"></path>
+                                <path
+                                    d="M726.7 467.2c32 0.5 58.5-14.1 64-16.5V445h-64v22.2zM240.7 454.1v-9h-40c-11.9 0-21.8 8.7-23.7 20.1 17.7 5.9 31.8-5.6 63.7-11.1z"
+                                    fill="#FFFFFF"></path>
+                            </g>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Elige tu maquillaje favorito!</span>
+                    </a>
+                    <div class="mt-6 lg:max-w-sm">
+                        <p class="text-sm text-gray-800">
+                          Hola! estamos muy felices de que estes aquí.
+                            Somos una tienda de maquillaje hecha con mucho amor para ustedes las mujeres que les gusta lucir hermosas, tenemos brochas, rubores, paletas de sombras
+                        </p>
+                        <p class="mt-4 text-sm text-gray-800">
+                            Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                            explicabo.
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-2 text-sm">
+                    <p class="text-base font-bold tracking-wide text-gray-900">Nuestros Contactos</p>
+            
+                    <div class="flex">
+                        <p class="mr-1 text-gray-800">Telefono:</p>
+                        <a href="tel:850-123-5021" aria-label="Our phone" title="Our phone"
+                            class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">323457860</a>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-1 text-gray-800">Email:</p>
+                        <a href="mailto:info@lorem.mail" aria-label="Our email" title="Our email"
+                            class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">DulceMakeup</a>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-1 text-gray-800" Ubicación:</p>
+                        <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer"
+                            aria-label="Our address" title="Our address"
+                            class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">
+                            Laureles calle 101 #31- 40
+                        </a>
+                        <img src="https://i.pinimg.com/550x/31/b4/b1/31b4b1bc6ff9c2c2739815738459853d.jpg" alt="">
+                       
+                    </div>
+                </div>
+                <div>
+                    <span class="text-base font-bold tracking-wide text-gray-900">Redes sociales</span>
+                    <div class="flex items-center mt-1 space-x-3">
+                        <a href="/"
+                            class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                                <path
+                                    d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="/"
+                            class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                            <svg viewBox="0 0 30 30" fill="currentColor" class="h-6">
+                                <circle cx="15" cy="15" r="4"></circle>
+                                <path
+                                    d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="/"
+                            class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                                <path
+                                    d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-500">
+                     Siguenos, tenemos sorpresas para ti.
+                    </p>
+                    <img src="https://mundoejecutivo.com.mx/wp-content/uploads/2022/12/image-4-6.jpg" alt="">
+                   <img src= "https://foodandpleasure.com/wp-content/uploads/2022/09/maquillaje-famosos-rarebeauty1-e1664318019615.jpg">
+                </div>
+            </div>
+            <div class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
+                <p class="text-sm text-gray-600">
+                    © Copyright 2020 Lorem Inc. All rights reserved.
+                </p>
+                <ul class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
+                    <li>
+                        <a href="/"
+                            class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">F.A.Q</a>
+                    </li>
+                    <li>
+                        <a href="/"
+                            class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Privacidad y
+                            Politicas</a>
+                    </li>
+                    <li>
+                        <a href="/"
+                            class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Terminos
+                            &amp; Condiciones</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
